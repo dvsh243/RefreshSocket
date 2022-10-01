@@ -7,7 +7,7 @@ var io = require('socket.io')(http, {
     }
 })
 
-app.get('/', function(req, res){ res.sendFile('E:/test/index.html') });  // add "CodV Socket Server" file here
+app.get('/', function(req, res){ res.sendFile('index.html') });  // add "CodV Socket Server" file here
 
 //Whenever someone connects this gets executed
 io.on('connection', async (socket) => {
