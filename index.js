@@ -11,18 +11,18 @@ app.get('/', function(req, res){ res.sendFile('E:/test/index.html') });  // add 
 
 //Whenever someone connects this gets executed
 io.on('connection', async (socket) => {
-   console.log('A user connected', socket.id);
-   socket.join(socket.handshake.query.dashboard_id)
-   console.log(`added user '${socket.id}' to room '${socket.handshake.query.dashboard_id}'`)
+    console.log('A user connected', socket.id);
+    socket.join(socket.handshake.query.dashboard_id)
+    console.log(`added user '${socket.id}' to room '${socket.handshake.query.dashboard_id}'`)
    
 //    let roomUsers = await io.in(socket.handshake.query.dashboard_id).fetchSockets()
 //    console.log(roomUsers)
     console.log(socket.rooms)
    
-   console.log("\n")
+    console.log("\n")
    
    //Whenever someone disconnects this piece of code executed
-   socket.on('disconnect', () => {
+    socket.on('disconnect', () => {
         console.log('A user disconnected');
     });
 
